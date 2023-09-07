@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p><%=hometext%></p>
+
+<% arrlist.forEach(function(element) {  %>
+    <h2><%=element.k  %></h2>
+    <% let d="localhost:3000/posts/"+element.k %>
+   <% let s=(element.v).substring(0,100);   %> 
+    <p><%=s+"..." %><a href="/posts/<%=element.k %>">Read More</a></p>
+<% }); %>
+
+
+
+<%- include("partials/footer") -%>
